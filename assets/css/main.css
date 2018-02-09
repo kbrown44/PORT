@@ -1,0 +1,116 @@
+/* ---------- VARIABLES ---------- */
+
+#main {
+  --black: #342a28;
+  --yellow: #faa105;
+  --grey: #847974;
+  --red: #d15218;
+  --blue: #41b2e6;
+  --white: #fff6eb;  
+}
+
+#black {
+  color: var(--black);
+}
+
+#yellow {
+  color: var(--yellow);
+}
+
+#red {
+  color: var(--red);
+}
+
+#blue {
+  color: var(--blue);
+}
+
+#white {
+  color: var(--white);
+}
+
+/* ---------- ANIMATIONS ---------- */
+
+
+
+/* ---------- GENERAL ---------- */
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: var(--white);
+  min-width: 400px;
+  min-height: 250px;
+}
+
+.containerA {
+  display: flex;
+  flex-wrap: nowrap;
+  align-self: center;
+  justify-content: space-between;
+}
+
+.containerB {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#gallery {
+  padding: 0 4em 0 4em;
+}
+
+.thumbnail {
+  margin: 0 0 1vw 0;
+  border: 2px solid #fff;
+  height: 18vw;
+}
+
+#coming {
+  color: darkorange;
+  font-size: 6em;
+  font-family: 'Black Ops One', cursive;
+}
+
+#header {
+  padding: 0.5em 4em 0.5em 4em;
+}
+
+h1 {
+  font-size: 3em;
+  font-weight: 100;
+  font-family: 'Black Ops One', cursive;
+  padding-right: 0.2em;
+}
+
+h3.menu {
+  font-size: 1em;
+  font-weight: 900;
+  font-family: 'Electrolize', sans-serif;
+  margin-left: 0.1em;
+  
+}
+
+.menu:hover {
+  cursor: pointer;
+}
+
+#switch {
+  float: right;
+  font-family: 'Electrolize', sans-serif;
+  font-size: 1em;
+  color: var(--black);
+  cursor: pointer;
+}
+
+#footer {
+  font-family: 'Electrolize', sans-serif;
+  font-size: 0.8em;
+  font-weight: 100;
+  color: var(--grey);
+  margin-left: calc(50% - 88px);
+}
+
