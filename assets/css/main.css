@@ -29,11 +29,30 @@
   color: var(--white);
 }
 
+#redH:hover {
+  color: var(--red);
+}
+
+#yellowH:hover {
+  color: var(--yellow);
+}
+
+#blueH:hover {
+  color: var(--blue);
+}
+
 /* ---------- ANIMATIONS ---------- */
 
 
 
 /* ---------- GENERAL ---------- */
+
+.splashLogo {
+  font-size: 10vw;
+  font-weight: 100;
+  font-family: 'Black Ops One', cursive;
+  margin: 20vh 0 0 0;
+}
 
 a {
   text-decoration: none;
@@ -52,21 +71,12 @@ body {
   justify-content: space-between;
 }
 
-.containerB {
+.containerS {
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-#gallery {
-  padding: 0 4em 0 4em;
-}
-
-.thumbnail {
-  margin: 0 0 1vw 0;
-  border: 2px solid #fff;
-  height: 18vw;
+  flex-wrap: nowrap;
+  align-self: center;
+  justify-content:center;
+  margin: 0;
 }
 
 #coming {
@@ -77,10 +87,11 @@ body {
 
 #header {
   padding: 0.5em 4em 0.5em 4em;
+  position:static;
 }
 
 h1 {
-  font-size: 3em;
+  font-size: 3.2em;
   font-weight: 100;
   font-family: 'Black Ops One', cursive;
   padding-right: 0.2em;
@@ -91,10 +102,15 @@ h3.menu {
   font-weight: 900;
   font-family: 'Electrolize', sans-serif;
   margin-left: 0.1em;
-  
+  cursor: pointer; 
 }
 
-.menu:hover {
+h3.Smenu {
+  font-size: 2vw;
+  font-weight: 900;
+  color: var(--black);
+  font-family: 'Electrolize', sans-serif;
+  margin-left: 0.1em;
   cursor: pointer;
 }
 
@@ -114,3 +130,55 @@ h3.menu {
   margin-left: calc(50% - 88px);
 }
 
+
+
+
+
+#gallery {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4em 0 4em;
+}
+
+a.thumb {
+  display: inline-block;
+  margin-bottom: 8px;
+  width: calc(50% - 4px);
+  margin-right: 8px;
+  text-decoration: none;
+  color: black;
+}
+
+a.thumb:nth-of-type(2n) {
+  margin-right: 0;
+}
+
+@media screen and (min-width: 50em) {
+  a.thumb {
+    width: calc(20% - 6.4px);
+  }
+  
+  a.thumb:nth-of-type(2n) {
+    margin-right: 8px;
+  }
+  
+  a.thumb:nth-of-type(5n) {
+    margin-right: 0;
+  }
+}
+
+a.thumb:hover img.thumb {
+  opacity: 0.8;
+}
+
+figure.thumb {
+  margin: 0;
+  overflow: hidden;
+}
+
+img.thumb {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  background: var(--white);
+}
