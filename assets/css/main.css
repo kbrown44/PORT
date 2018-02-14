@@ -2,7 +2,7 @@
 
 
 html {
-  --black: #342a28;
+  --black: #241d1c;
   --yellow: #faa105;
   --grey: #847974;
   --red: #d15218;
@@ -14,7 +14,15 @@ html {
   color: var(--black);
 }
 
+.black {
+  color: var(--black);
+}
+
 #yellow {
+  color: var(--yellow);
+}
+
+.yellow {
   color: var(--yellow);
 }
 
@@ -22,7 +30,15 @@ html {
   color: var(--red);
 }
 
+.red {
+  color: var(--red);
+}
+
 #blue {
+  color: var(--blue);
+}
+
+.blue {
   color: var(--blue);
 }
 
@@ -41,6 +57,14 @@ html {
 #blueH:hover {
   color: var(--blue);
 }
+
+
+
+
+/* ---------- ANIMATIONS ---------- */
+
+
+@keyframes zoom {  from {transform: scale(0);} to {transform: scale(1);} }
 
 
 
@@ -71,8 +95,9 @@ h1 {
   font-weight: 100;
   font-family: 'Black Ops One', cursive;
   padding-right: 0.2em;
-  cursor: pointer;
+  cursor: default;
 }
+
 
 
 
@@ -80,11 +105,12 @@ h1 {
 /* ---------- SPLASH ---------- */
 
 
-.splashLogo {
+h1.splashLogo {
   font-size: 10vw;
   font-weight: 100;
   font-family: 'Black Ops One', cursive;
   margin: 20vh 0 0 0;
+  padding-right: 0;
 }
 
 h3.Smenu {
@@ -112,7 +138,6 @@ h3.menu {
 
 #header {
   padding: 0.5em 4em 0.5em 4em;
-  position: static;
 }
 
 
@@ -127,6 +152,7 @@ h3.menu {
   align-self: center;
   justify-content: space-between;
 }
+
 
 .containerS {
   display: flex;
@@ -151,32 +177,40 @@ h3.menu {
 div.thumb {
   display: inline-block;
   margin-bottom: 8px;
-  width: calc(50% - 4px);
+  width: calc(20% - 6.4px);
   margin-right: 8px;
   text-decoration: none;
-  color: black;
+  background-color: var(--red);
 }
 
-div.thumb:nth-of-type(2n) {
-  margin-right: 0;
-}
+div.thumb:nth-of-type(5n) {
+    margin-right: 0;
+  }
 
-@media screen and (min-width: 50em) {
+@media screen and (max-width: 810px) {
   div.thumb {
-    width: calc(20% - 6.4px);
+    width: calc(50% - 4px);
   }
   
   div.thumb:nth-of-type(2n) {
-    margin-right: 8px;
-  }
+    margin-right: 0;
+  } 
   
-  div.thumb:nth-of-type(5n) {
+  div.thumb:nth-of-type(2n-1) {
+    margin-right: 8px;
+  } 
+  
+}
+
+@media screen and (max-width: 573px) {
+  div.thumb {
+    width: 100%;
     margin-right: 0;
   }
 }
 
-div.thumb:hover img.thumb {
-  opacity: 0.8;
+img.thumb:hover {
+  opacity: 0.25;
   cursor: pointer;
 }
 
@@ -201,5 +235,182 @@ img.thumb {
   color: darkorange;
   font-size: 6em;
   font-family: 'Black Ops One', cursive;
+}
+
+
+
+
+/* ---------- MODAL ---------- */
+
+#modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  padding: 5vh 0 5vh 0;
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.92); /* Black w/ opacity */
+}
+
+#modalContent {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  z-index: 1;
+}
+
+#modalDiv {
+  width: 79%;
+  height: 90vh;
+  flex: none;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  animation-name: zoom;
+  animation-duration: 0.4s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+  pointer-events: none;
+  margin: 0 10px 0 10px;
+}
+
+#tempImg {
+  display: none;
+}
+
+#close1 {
+  position: fixed;
+  top: 20px;
+  right: 40px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.fa-times {
+  color: var(--red);
+  flex: none;
+  max-height: 60px;
+  background-color: var(--black);
+  border-radius: 10%;
+  padding: 8% 24% 8% 24%;
+}
+
+.fa-times:hover {
+  color: var(--red);
+  background-color: var(--white);
+}
+
+#leftArrow1, #leftArrow2, #rightArrow1, #rightArrow2 {
+  flex: none;
+  position: left;
+  cursor: pointer;
+  animation-name: zoom;
+  animation-duration: 0.4s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+  border-radius: 20%;
+  padding: 0.8%;
+  margin-top: 40vh;
+  max-height: 50px;
+}
+
+#arrows {
+  display: none;
+}
+
+#leftArrow1, #leftArrow2 {
+  color: var(--yellow);
+  background-color: var(--black);
+}
+
+#rightArrow1, #rightArrow2 {
+  color: var(--blue);
+  background-color: var(--black);
+}
+
+#leftArrow1:hover, #leftArrow2:hover {
+  color: var(--yellow);
+  background-color: var(--white);
+}
+
+#rightArrow1:hover, #rightArrow2:hover {
+  color: var(--blue);
+  background-color: var(--white);
+}
+
+
+
+
+/* ---------- RESPONSIVE ---------- */
+
+
+@media (max-width: 1000px) {
+  #leftArrow1, #rightArrow1, #close1 {
+    display: none;
+  }
+  
+  #leftArrow2, #rightArrow2, #close2 {
+    margin: 0 15% 0 15%;
+  }
+  
+  #close2, #leftArrow1, #leftArrow2, #rightArrow1, #rightArrow2 {
+    animation-name: zoom;
+    animation-duration: 0.3s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
+  }
+  
+  .fa-times {
+    padding: 0 8% 0 8%;
+    max-height: 50px;
+    cursor: pointer;
+  }
+    
+  #modalContent {
+    flex-wrap: wrap;
+  }
+  
+  #arrows {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    flex-direction: row;
+    max-height: 52px;
+  }
+  
+  #modalDiv {
+    width: 94%;
+    height: 70vh;
+    margin: 0 0 0 0;
+    flex: none;
+  }
+}
+
+@media screen and (max-width: 810px) {
+  
+  .containerA {
+    flex-direction: column;
+    align-self: center;
+    justify-content: space-around;
+  }
+  
+  h1 {
+    text-align: center;
+    padding: 0;
+    margin-bottom: 0;
+    font-size: 4em;
+  }
+  
+  h3.menu {
+    text-align: center;
+    margin: 5px 0 5px 0;
+    font-size: 1.8em;
+  }
 }
 

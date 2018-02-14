@@ -3,11 +3,12 @@
     
   <head>
     <meta charset="utf-8">
-    <title>Kyle Brown</title>
+    <title>KYLE BROWN | PHOTO</title>
     <link rel="icon" href="../images/icon/favicon.png">
     <link rel="stylesheet" href="../assets/css/main.css" />
     <link href="https://fonts.googleapis.com/css?family=Black+Ops+One" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Electrolize" rel="stylesheet">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </head>
     
@@ -16,17 +17,31 @@
     
     <div id='header' class='containerA'>
       
-      <div>
-        <h1 id='red' onclick='javascript:colorChange();'>KYLE BROWN</h1>
-      </div>
+
+        <h1 id='logo' class='red'>KYLE BROWN</h1>
+
       
       <div id='menu' class='containerA'>
-        <h3 class='menu' id='red'>PHOTOGRAPHY</h3>
-        <a href='../video/'><h3 class='menu' id='yellow'>VIDEO</h3></a>
-        <a href='../design/'><h3 class='menu' id='blue'>DESIGN</h3></a>
-        <a href='../contact/'><h3 class='menu' id='black'>CONTACT</h3></a>
+        <h3 class='menu' id='red'>PHOTO</h3>
+        <a href='../video/'><h3 class='menu' id='yellow' onmouseover="javascript:logoYellow();" onmouseout="javascript:logoRed();">VIDEO</h3></a>
+        <a href='../design/'><h3 class='menu' id='blue' onmouseover="javascript:logoBlue();" onmouseout="javascript:logoRed();">DESIGN</h3></a>
+        <a href='../contact/'><h3 class='menu' id='black' onmouseover="javascript:logoBlack();" onmouseout="javascript:logoRed();">CONTACT</h3></a>
       </div>
       
+    </div>
+    
+    <div id="modal">
+      <div id="modalContent">
+        <i id="leftArrow1" class="fa fa-arrow-left fa-3x" onclick="javascript:changeLeft();"></i>
+        <div id="arrows">
+          <i id="leftArrow2" class="fa fa-arrow-left fa-3x" onclick="javascript:changeLeft();"></i>
+          <i id="close2" class="fa fa-times fa-3x" onclick="javascript:closeModal();"></i>
+          <i id="rightArrow2" class="fa fa-arrow-right fa-3x" onclick="javascript:changeRight();"></i>
+        </div>
+        <div id="modalDiv"></div>
+        <i id="rightArrow1" class="fa fa-arrow-right fa-3x" onclick="javascript:changeRight();"></i>
+        <span id="close1" onclick="javascript:closeModal();"><i class="fa fa-times fa-3x" aria-hidden="true"></i></span>
+      </div>
     </div>
     
     
