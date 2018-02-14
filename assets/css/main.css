@@ -162,6 +162,15 @@ h3.menu {
   margin: 0;
 }
 
+.containerC {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-self: baseline;
+  justify-content: space-around;
+  margin: 0 0 4em 0;
+}
+
 
 
 
@@ -235,6 +244,45 @@ img.thumb {
   color: darkorange;
   font-size: 6em;
   font-family: 'Black Ops One', cursive;
+}
+
+
+
+
+/* ---------- CONTACT ---------- */
+
+h4.contact {
+  font-family: 'Black Ops One', cursive;
+  font-size: 2em;
+  font-weight: 100;
+  text-align: center;
+}
+
+#res, #insta, #email {
+  text-decoration: none;
+  color: var(--grey);
+}
+
+#res:hover {
+  color: var(--red);
+}
+
+#insta:hover {
+  color: var(--yellow);
+}
+
+#email:hover {
+  color: var(--blue);
+}
+
+@media (max-width: 800px) {
+  
+  .containerC {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+  }
 }
 
 

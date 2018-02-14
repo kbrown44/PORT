@@ -5,7 +5,7 @@ var logo = document.getElementById("logo");
 var modal = document.getElementById("modal");
 var close = document.getElementById("close1");
 var modalDiv = document.getElementById("modalDiv");
-var images = 22; //Number of Images to Be Loaded, start at '0'
+var images = 34; //Number of Images to Be Loaded, start at '0'
 var place = '0'; //Pointer for Gallery
 var color = 'blue'; //BG Color for Gallery
 
@@ -13,7 +13,7 @@ var color = 'blue'; //BG Color for Gallery
 //******LOAD IMAGES******
 
 $(document).ready(function(){
-        var dir = "../images/thumbnail/"; // folder location
+        var dir = "../images/thumbnail/KB"; // folder location
         var fileextension = ".jpg"; // image format
         var i = "0";
         
@@ -44,14 +44,14 @@ function closeModal() {
 
 function firstOpen(z) {
   place = z;
-  var dir = "../images/gallery/"; // folder location
+  var dir = "../images/gallery/KB"; // folder location
   var fileextension = ".jpg"; // image format
   modalDiv.style.backgroundImage = "url(" + dir + z + fileextension + ")"; // Change Image Source
   openModal();
 }
 
 function changeLeft() {
-  var dir = "../images/gallery/"; // folder location
+  var dir = "../images/gallery/KB"; // folder location
   var fileextension = ".jpg"; // image format
   place--;
   if(place < 0){place = images;}
@@ -59,27 +59,9 @@ function changeLeft() {
 }
 
 function changeRight() {
-  var dir = "../images/gallery/"; // folder location
+  var dir = "../images/gallery/KB"; // folder location
   var fileextension = ".jpg"; // image format
   place++;
   if(place > images){place = 0;}
   modalDiv.style.backgroundImage = "url(" + dir + place + fileextension + ")"; // Change Image Source
-}
-
-//*********LOGO COLOR***********
-
-function logoRed() {
-  logo.style.color = "var(--red)";
-}
-
-function logoYellow() {
-  logo.style.color = "var(--yellow)";
-}
-
-function logoBlue() {
-  logo.style.color = "var(--blue)";
-}
-
-function logoBlack() {
-  logo.style.color = "var(--black)";
 }
