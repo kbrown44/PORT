@@ -5,15 +5,36 @@ var logo = document.getElementById("logo");
 var modal = document.getElementById("modal");
 var close = document.getElementById("close1");
 var modalDiv = document.getElementById("modalDiv");
-var images = 34; //Number of Images to Be Loaded, start at '0'
+var images; //Number of Images to Be Loaded, start at '0'
 var place = '0'; //Pointer for Gallery
 var color = 'blue'; //BG Color for Gallery
+var pageTitle = document.title;
+var page; //Page for Image Folder Location
 
 
 //******LOAD IMAGES******
 
+function directory() {
+  if (pageTitle == "KYLE BROWN | PHOTO") {
+    page = 'photo/';
+    images = 34;
+  }
+  
+  else if (pageTitle == "KYLE BROWN | VIDEO") {
+    page = 'video/';
+    images = 9;
+  }
+  
+  else if (pageTitle == "KYLE BROWN | DESIGN") {
+    page = 'design/';
+    images = 8;
+  }
+}
+
+
 $(document).ready(function(){
-        var dir = "../images/thumbnail/KB"; // folder location
+        directory();
+        var dir = "../images/" + page + "thumbnail/KB"; // folder location
         var fileextension = ".jpg"; // image format
         var i = "0";
         
@@ -30,7 +51,7 @@ $(document).ready(function(){
           };
         });   
       });
-
+  
 
 //******MODAL GALLERY******
 
@@ -44,14 +65,14 @@ function closeModal() {
 
 function firstOpen(z) {
   place = z;
-  var dir = "../images/gallery/KB"; // folder location
+  var dir = "../images/" + page + "gallery/KB"; // folder location
   var fileextension = ".jpg"; // image format
   modalDiv.style.backgroundImage = "url(" + dir + z + fileextension + ")"; // Change Image Source
   openModal();
 }
 
 function changeLeft() {
-  var dir = "../images/gallery/KB"; // folder location
+  var dir = "../images/" + page + "gallery/KB"; // folder location
   var fileextension = ".jpg"; // image format
   place--;
   if(place < 0){place = images;}
@@ -59,7 +80,7 @@ function changeLeft() {
 }
 
 function changeRight() {
-  var dir = "../images/gallery/KB"; // folder location
+  var dir = "../images/" + page + "gallery/KB"; // folder location
   var fileextension = ".jpg"; // image format
   place++;
   if(place > images){place = 0;}

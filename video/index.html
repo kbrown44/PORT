@@ -30,7 +30,21 @@
       
     </div>
     
-    <center><p id="coming">COMING SOON!</p></center>
+        <div id="modal">
+      <div id="modalContent">
+        <i id="leftArrow1" class="fa fa-arrow-left fa-3x" onclick="javascript:changeLeft();"></i>
+        <div id="arrows">
+          <i id="leftArrow2" class="fa fa-arrow-left fa-3x" onclick="javascript:changeLeft();"></i>
+          <i id="close2" class="fa fa-times fa-3x" onclick="javascript:closeModal();"></i>
+          <i id="rightArrow2" class="fa fa-arrow-right fa-3x" onclick="javascript:changeRight();"></i>
+        </div>
+        <div id="modalDiv"></div>
+        <i id="rightArrow1" class="fa fa-arrow-right fa-3x" onclick="javascript:changeRight();"></i>
+        <span id="close1" onclick="javascript:closeModal();"><i class="fa fa-times fa-3x" aria-hidden="true"></i></span>
+      </div>
+    </div>
+    
+    <div id='gallery'></div>
     
     
     <!-- SCRIPTS -->

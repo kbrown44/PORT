@@ -10,6 +10,12 @@ html {
   --white: #fff6eb;  
 }
 
+
+
+
+/* ---------- COLORS ---------- */
+
+
 #black {
   color: var(--black);
 }
@@ -152,7 +158,6 @@ h3.menu {
   align-self: center;
   justify-content: space-between;
 }
-
 
 .containerS {
   display: flex;
@@ -324,12 +329,7 @@ h4.contact {
   animation-duration: 0.4s;
   animation-iteration-count: 1;
   animation-timing-function: ease;
-  pointer-events: none;
   margin: 0 10px 0 10px;
-}
-
-#tempImg {
-  display: none;
 }
 
 #close1 {
