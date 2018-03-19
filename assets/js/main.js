@@ -27,14 +27,13 @@ function directory() {
   
   else if (pageTitle == "KYLE BROWN | DESIGN") {
     page = 'design/';
-    images = 8;
+    images = 12;
   }
 }
 
-
 $(document).ready(function(){
         directory();
-        var dir = "../images/" + page + "thumbnail/KB"; // folder location
+        var dir = "../images/" + page + "gallery/KB"; // folder location
         var fileextension = ".jpg"; // image format
         var i = "0";
         
@@ -42,15 +41,16 @@ $(document).ready(function(){
           if (color == "blue"){color = "red";}
           else if (color == "yellow"){color = "blue";}
           else {color = "yellow";}
-          $("<div  />").attr('class', "thumb" ).attr('id', "div" + i ).attr('style', "background-color: var(--" + color + ")" ).appendTo("#gallery");
-          $("<figure  />").attr('class', "thumb" ).attr('id', "figure" + i ).appendTo("#div" + i);
-          $("<img>").attr('class', "thumb" ).attr('src',  dir + i + fileextension ).attr('onclick', "javascript:firstOpen(" + i + ");").appendTo("#figure" + i);
+          $("<div  />").attr('class', "image fit" ).attr('id', "photo" + i).attr('style', "background-color: var(--" + color + ")" ).appendTo("#gallery");
+          $("<img />").attr('src', dir + i + fileextension ).attr('onclick', "javascript:firstOpen(" + i + ");").appendTo("#photo" + i);
           if (i < images){
             i++;
             imageloop();
           };
         });   
       });
+
+
   
 
 //******MODAL GALLERY******
