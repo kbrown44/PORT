@@ -2,15 +2,25 @@
 
 
 html {
-  --black: #342a28;
+  --black: #241d1c;
   --yellow: #faa105;
   --grey: #847974;
-  --red: #d15218;
-  --blue: #41b2e6;
+  --red: #d24100;
+  --blue: #04aaee;
   --white: #fff6eb;  
 }
 
+
+
+
+/* ---------- COLORS ---------- */
+
+
 #black {
+  color: var(--black);
+}
+
+.black {
   color: var(--black);
 }
 
@@ -18,11 +28,23 @@ html {
   color: var(--yellow);
 }
 
+.yellow {
+  color: var(--yellow);
+}
+
 #red {
   color: var(--red);
 }
 
+.red {
+  color: var(--red);
+}
+
 #blue {
+  color: var(--blue);
+}
+
+.blue {
   color: var(--blue);
 }
 
@@ -45,6 +67,14 @@ html {
 
 
 
+/* ---------- ANIMATIONS ---------- */
+
+
+@keyframes zoom { from {transform: scale(0);} to {transform: scale(1);} }
+
+
+
+
 /* ---------- GENERAL ---------- */
 
 
@@ -58,21 +88,14 @@ body {
   min-height: 250px;
 }
 
-#footer {
-  font-family: 'Electrolize', sans-serif;
-  font-size: 0.8em;
-  font-weight: 100;
-  color: var(--grey);
-  margin-left: calc(50% - 88px);
-}
-
 h1 {
   font-size: 3.2em;
   font-weight: 100;
   font-family: 'Black Ops One', cursive;
   padding-right: 0.2em;
-  cursor: pointer;
+  cursor: default;
 }
+
 
 
 
@@ -80,11 +103,12 @@ h1 {
 /* ---------- SPLASH ---------- */
 
 
-.splashLogo {
+h1.splashLogo {
   font-size: 10vw;
   font-weight: 100;
   font-family: 'Black Ops One', cursive;
   margin: 20vh 0 0 0;
+  padding-right: 0;
 }
 
 h3.Smenu {
@@ -112,7 +136,6 @@ h3.menu {
 
 #header {
   padding: 0.5em 4em 0.5em 4em;
-  position: static;
 }
 
 
@@ -139,67 +162,483 @@ h3.menu {
 
 
 
-/* ---------- GALLERY ---------- */
-
-
-#gallery {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0 4em 0 4em;
-}
-
-div.thumb {
-  display: inline-block;
-  margin-bottom: 8px;
-  width: calc(50% - 4px);
-  margin-right: 8px;
-  text-decoration: none;
-  color: black;
-}
-
-div.thumb:nth-of-type(2n) {
-  margin-right: 0;
-}
-
-@media screen and (min-width: 50em) {
-  div.thumb {
-    width: calc(20% - 6.4px);
-  }
-  
-  div.thumb:nth-of-type(2n) {
-    margin-right: 8px;
-  }
-  
-  div.thumb:nth-of-type(5n) {
-    margin-right: 0;
-  }
-}
-
-div.thumb:hover img.thumb {
-  opacity: 0.8;
-  cursor: pointer;
-}
-
-figure.thumb {
-  margin: 0;
-  overflow: hidden;
-}
-
-img.thumb {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  background: var(--white);
-}
-
-
-
-
 /* ---------- TEMP ---------- */
 
 #coming {
   color: darkorange;
   font-size: 6em;
   font-family: 'Black Ops One', cursive;
+}
+
+
+
+
+/* ---------- GALLERY ---------- */
+
+
+#gallery {
+  padding: 0 4em 0 4em;
+}
+
+
+
+
+/* ---------- MODAL ---------- */
+
+#modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  padding: 5vh 0 5vh 0;
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.92); /* Black w/ opacity */
+}
+
+#modalContent {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  z-index: 1;
+}
+
+#modalDiv {
+  width: 79%;
+  height: 90vh;
+  flex: none;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  animation-name: zoom;
+  animation-duration: 0.4s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+  margin: 0 10px 0 10px;
+}
+
+#close1 {
+  position: fixed;
+  top: 20px;
+  right: 40px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.fa-times {
+  color: var(--red);
+  flex: none;
+  max-height: 60px;
+  background-color: var(--black);
+  border-radius: 10%;
+  padding: 8% 24% 8% 24%;
+}
+
+.fa-times:hover {
+  color: var(--red);
+  background-color: var(--white);
+}
+
+#leftArrow1, #leftArrow2, #rightArrow1, #rightArrow2 {
+  flex: none;
+  position: left;
+  cursor: pointer;
+  animation-name: zoom;
+  animation-duration: 0.4s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+  border-radius: 20%;
+  padding: 0.8%;
+  margin-top: 40vh;
+  max-height: 50px;
+}
+
+#arrows {
+  display: none;
+}
+
+#leftArrow1, #leftArrow2 {
+  color: var(--yellow);
+  background-color: var(--black);
+}
+
+#rightArrow1, #rightArrow2 {
+  color: var(--blue);
+  background-color: var(--black);
+}
+
+#leftArrow1:hover, #leftArrow2:hover {
+  color: var(--yellow);
+  background-color: var(--white);
+}
+
+#rightArrow1:hover, #rightArrow2:hover {
+  color: var(--blue);
+  background-color: var(--white);
+}
+
+
+
+
+/* ---------- RESPONSIVE ---------- */
+
+
+@media (max-width: 1000px) {
+  #leftArrow1, #rightArrow1, #close1 {
+    display: none;
+  }
+  
+  #leftArrow2, #rightArrow2, #close2 {
+    margin: 0 15% 0 15%;
+  }
+  
+  #close2, #leftArrow1, #leftArrow2, #rightArrow1, #rightArrow2 {
+    animation-name: zoom;
+    animation-duration: 0.3s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
+  }
+  
+  .fa-times {
+    padding: 0 8% 0 8%;
+    max-height: 50px;
+    cursor: pointer;
+  }
+    
+  #modalContent {
+    flex-wrap: wrap;
+  }
+  
+  #arrows {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    flex-direction: row;
+    max-height: 52px;
+  }
+  
+  #modalDiv {
+    width: 94%;
+    height: 70vh;
+    margin: 0 0 0 0;
+    flex: none;
+  }
+}
+
+@media screen and (max-width: 810px) {
+  
+  .containerA {
+    flex-direction: column;
+    align-self: center;
+    justify-content: space-around;
+  }
+  
+  h1 {
+    text-align: center;
+    padding: 0;
+    margin-bottom: 0;
+    font-size: 4em;
+  }
+  
+  h3.menu {
+    text-align: center;
+    margin: 5px 0 5px 0;
+    font-size: 1.8em;
+  }
+}
+
+
+/*
+	Radius by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+*/
+
+
+/* ---------- BASIC ---------- */
+
+
+  @-ms-viewport {
+    width: device-width;
+  }
+
+  @media screen and (max-width: 480px) {
+    
+    html, body {
+      min-width: 320px;
+    }
+  }
+
+  body.is-loading *, body.is-loading *:before, body.is-loading *:after {
+    -moz-animation: none !important;
+    -webkit-animation: none !important;
+    -ms-animation: none !important;
+    animation: none !important;
+    -moz-transition: none !important;
+    -webkit-transition: none !important;
+    -ms-transition: none !important;
+    transition: none !important;
+  }
+
+
+
+
+/* ---------- IMAGE ---------- */
+
+
+.image {
+  border-radius: 4px;
+  border: 0;
+  display: inline-block;
+  position: relative;
+}
+
+.image img {
+  border-radius: 4px;
+  display: block;
+}
+
+.image.left, .image.right {
+  max-width: 40%;
+}
+
+.image.left img, .image.right img {
+    width: 100%;
+}
+
+.image.left {
+  float: left;
+  margin: 0 1.5em 1em 0;
+  top: 0.25em;
+}
+
+.image.right {
+  float: right;
+  margin: 0 0 1em 1.5em;
+  top: 0.25em;
+}
+
+.image.fit {
+  display: block;
+  margin: 0 0 2em 0;
+  width: 100%;
+}
+
+.image.fit img {
+  width: 100%;
+}
+
+.image.main {
+  display: block;
+  margin: 0 0 3em 0;
+  width: 100%;
+}
+
+.image.main img {
+  width: 100%;
+}
+
+
+
+
+/* ---------- COLUMNS ---------- */
+
+
+.columns {
+  position: relative;
+  -moz-column-count: 5;
+  -webkit-column-count: 5;
+  column-count: 5;
+  -moz-column-gap: 1em;
+  -webkit-column-gap: 1em;
+  column-gap: 1em;
+}
+
+.columns .image {
+  position: relative;
+  display: inline-block;
+  margin: 0 0 .5em;
+  width: 100%;
+  overflow: hidden;
+}
+
+.columns .image img {
+  -moz-transition: -moz-transform 0.2s ease-in-out;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  -ms-transition: -ms-transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translate3D(0, 0, 0);
+}
+
+.columns .image:hover img {
+  cursor: pointer;
+  -moz-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  border-radius: 4px;
+}
+
+@media screen and (max-width: 736px) {
+
+  .columns {
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2;
+  }
+}
+
+@media screen and (max-width: 480px) {
+
+  .columns {
+    -moz-column-count: 1;
+    -webkit-column-count: 1;
+    column-count: 1;
+  }
+}
+
+
+
+
+/* ---------- FOOTER ---------- */
+
+
+#footer {
+  -moz-transition: bottom 0.2s ease;
+  -webkit-transition: bottom 0.2s ease;
+  -ms-transition: bottom 0.2s ease;
+  transition: bottom 0.2s ease;
+  position: fixed;
+  bottom: -30em;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 9999;
+  font-family: 'Electrolize', sans-serif;
+}
+
+#footer h3 {
+  font-family: 'Black Ops One', cursive;
+  font-weight: 20;
+}
+
+
+
+#footer .inner {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -moz-justify-content: center;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -moz-align-items: stretch;
+  -webkit-align-items: stretch;
+  -ms-align-items: stretch;
+  align-items: stretch;
+  display: -ms-flexbox;
+  -ms-flex-align: center;
+  -ms-flex-pack: center;
+  position: relative;
+  z-index: 10003;
+  background: var(--black);
+  padding: 0 2em 4em 2em;
+  height: 20em;
+}
+
+#footer .inner .content,
+#footer .inner .copyright {
+  width: 50%;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.75);
+  padding: 2em;
+  display: inline-block;
+}
+
+#footer .inner .content h3,
+#footer .inner .copyright h3 {
+  color: var(--white);
+  font-size: 1.75em;
+}
+
+#footer .inner .copyright a {
+  color: var(--white);
+}
+
+#footer .inner .copyright a:hover {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+#footer .inner .content p,
+#footer .inner .copyright p {
+  margin: 0;
+}
+
+#footer .inner .copyright ul {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding-bottom: 1em;
+}
+
+@media screen and (max-width: 980px) {
+  
+  #footer {
+      position: relative;
+      bottom: 0;
+  }
+
+  #footer .inner {
+      height: auto;
+      display: block;
+  }
+
+  #footer .inner .content,
+  #footer .inner .copyright {
+    padding-left: 0;
+    padding-right: 0;
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  #footer .fa-info {
+    display: none;
+  }
+}
+
+#footer li:hover {
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 480px) {
+  
+  #footer .inner {
+    padding: 2em;
+  }
+
+  #footer .inner .content,
+  #footer .inner .copyright {
+    padding: 1em;
+  }
+}
+
+ul.icons {
+  padding-left: 0;
+}
+
+ul.icons li {
+  text-decoration: none;
+  display: inline-block;
+  padding: 0 1em 0 0;
+}
+
+p.about {
+  text-align: justify;
 }
 

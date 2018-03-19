@@ -3,44 +3,101 @@
     
   <head>
     <meta charset="utf-8">
-    <title>Kyle Brown</title>
+    <title>KYLE BROWN | DESIGN</title>
     <link rel="icon" href="../images/icon/favicon.png">
     <link rel="stylesheet" href="../assets/css/main.css" />
     <link href="https://fonts.googleapis.com/css?family=Black+Ops+One" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Electrolize" rel="stylesheet">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </head>
     
   
   <body>
     
+    
+    
+    <!-- Header -->
     <div id='header' class='containerA'>
-      
-      <div>
-        <h1 id='blue' onclick='javascript:colorChange();'>KYLE BROWN</h1>
-      </div>
-      
+      <h1 id='logo' class='blue'>KYLE BROWN</h1>
+      <!-- Menu -->
       <div id='menu' class='containerA'>
-        <a href='../photo/'><h3 class='menu' id='red'>PHOTOGRAPHY</h3></a>
+        <a href='../photo/'><h3 class='menu' id='red'>PHOTO</h3></a>
         <a href='../video/'><h3 class='menu' id='yellow'>VIDEO</h3></a>
         <h3 class='menu' id='blue'>DESIGN</h3>
-        <a href='../contact/'><h3 class='menu' id='black'>CONTACT</h3></a>
+        <a href='#'><h3 class='menu' id='black' onclick="showFooter();">CONTACT</h3></a>
       </div>
-      
     </div>
     
-       <center><p id='coming'>COMING SOON!</p></center>
-
+    
+    
+    <!-- Modal -->
+    <div id="modal">
+      <div id="modalContent">
+        <i id="leftArrow1" class="fa fa-arrow-left fa-3x" onclick="javascript:changeLeft();"></i>
+        <div id="arrows">
+          <i id="leftArrow2" class="fa fa-arrow-left fa-3x" onclick="javascript:changeLeft();"></i>
+          <i id="close2" class="fa fa-times fa-3x" onclick="javascript:closeModal();"></i>
+          <i id="rightArrow2" class="fa fa-arrow-right fa-3x" onclick="javascript:changeRight();"></i>
+        </div>
+        <div id="modalDiv"></div>
+        <i id="rightArrow1" class="fa fa-arrow-right fa-3x" onclick="javascript:changeRight();"></i>
+        <span id="close1" onclick="javascript:closeModal();"><i class="fa fa-times fa-3x" aria-hidden="true"></i></span>
+      </div>
+    </div>
+    
+    
+    
+    <!-- Main -->
+    <div id="main">
+        <div class="inner">
+            <div id="gallery" class="columns"></div>
+        </div>
+    </div>
+    
+    
+    
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="inner">
+            <div class="content">
+                <h3>ABOUT <span id='blue'>KYLE</span></h3>
+                <p class="about">Kyle is a Digital Artist specializing in Photography, Video, and Design. Since graduating Summa Cum Laude from Stony Brook University with a BA in Studio Art, Kyle has taken on various projects in both the Commercial and Fine Art sectors. His aesthetic follows an abstract minimalist ideal that combines his Fine Art teaching with his hands-on technical training. Kyle has been awarded honors such as the Leon Bolotin Scholarship Award and was twice a finalist in Photographer’s Forum Magazine’s “Best of Photography” competitions. Aside from creating, Kyle’s passions include football, comics, films, and fitness.</p>
+            </div>
+            <div class="copyright">
+                <h3>CONTACT ME</h3>
+                <ul class="icons">
+                  <li><a href="../images/file/RES.pdf" target="_blank"><i class="far fa-file-alt fa-2x" id="red"></i></a></li>
+                  <li><a href="https://www.instagram.com/kylebrown.studio" target="_blank"><i class="fab fa-instagram fa-2x" id="yellow"></i></a></li>
+                  <li><a href="mailto:kylebrownstudio@gmail.com?Subject=Artist%20Inquiry" target="_top" ><i class="far fa-envelope fa-2x" id="blue"></i></a></li>
+                </ul>
+                &copy; KYLE BROWN || DESIGN ADAPTATION: <a href="https://templated.co">TEMPLATED</a>.
+            </div>
+        </div>
+    </footer>
+    
+    
     
     <!-- SCRIPTS -->
-    <script src="../assets/js/main.js"></script>
-    
+      <script>
+        var foot = document.getElementById("footer");
+        var x = 0; //0=down, 1=up
+        function showFooter(){
+          if (x == 0){
+            foot.style.bottom = "0em";
+            x = 1;
+          }
+          else {
+            foot.style.bottom = "-30em";
+            x = 0;
+          }
+        }
+      </script>
+      <script src="../assets/js/skel.min.js"></script>
+      <script src="../assets/js/util.js"></script>
+      <script src="../assets/js/radius.js"></script>
+      <script src="../assets/js/main.js"></script>
     
   </body>
-  
-  
-  <footer>
-    <p id="footer">&copy; Kyle Brown. All Rights Reserved.</p>
-  </footer>
     
 </html>
