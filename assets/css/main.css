@@ -127,11 +127,18 @@ h3.Smenu {
 
 
 h3.menu {
-  font-size: 1em;
-  font-weight: 900;
+  font-size: 1.2em;
+  font-weight: 500;
   font-family: 'Electrolize', sans-serif;
   margin-left: 0.1em;
-  cursor: pointer; 
+  cursor: pointer;
+  border-bottom: 1px solid var(--white);
+  border-top: 1px solid var(--white);
+}
+
+h3.menu:hover {
+  border-bottom-color: var(--grey);
+  border-top-color: var(--grey);
 }
 
 #header {
@@ -485,7 +492,16 @@ h3.menu {
   border-radius: 4px;
 }
 
-@media screen and (max-width: 736px) {
+@media screen and (max-width: 1000px) {
+
+  .columns {
+    -moz-column-count: 3;
+    -webkit-column-count: 3;
+    column-count: 3;
+  }
+}
+
+@media screen and (max-width: 890px) {
 
   .columns {
     -moz-column-count: 2;
@@ -494,7 +510,7 @@ h3.menu {
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 600px) {
 
   .columns {
     -moz-column-count: 1;
@@ -586,16 +602,16 @@ h3.menu {
   padding-bottom: 1em;
 }
 
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 917px) {
   
   #footer {
-      position: relative;
-      bottom: 0;
+    position: relative;
+    bottom: 0;
   }
 
   #footer .inner {
-      height: auto;
-      display: block;
+    height: auto;
+    display: block;
   }
 
   #footer .inner .content,

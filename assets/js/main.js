@@ -5,6 +5,7 @@ var logo = document.getElementById("logo");
 var modal = document.getElementById("modal");
 var close = document.getElementById("close1");
 var modalDiv = document.getElementById("modalDiv");
+var foot = document.getElementById("footer");
 var images; //Number of Images to Be Loaded, start at '0'
 var place = '0'; //Pointer for Gallery
 var color = 'blue'; //BG Color for Gallery
@@ -56,6 +57,7 @@ $(document).ready(function(){
 //******MODAL GALLERY******
 
 function openModal() {
+  foot.style.bottom = "-30em";
   modal.style.display = "block";
 }
 
